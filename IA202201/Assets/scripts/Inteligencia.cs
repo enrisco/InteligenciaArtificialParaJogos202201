@@ -6,10 +6,14 @@ public class Inteligencia : MonoBehaviour
 {
     [Header("Sensores")]
     [SerializeField] SensorVisao visao;
+    [Header("Atuadores")]
+    [SerializeField] AtuadorPerseguir seguir;
     // Start is called before the first frame update
+    [Header("Geral")]
+    Animator anim;
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -17,7 +21,12 @@ public class Inteligencia : MonoBehaviour
     {
         if (visao.vendo)
         {
-            Debug.Log("estou vendo!!!");
+            anim.SetBool("podeAndar", true);
+            seguir.Perseguir();
+        }
+        else
+        {
+            anim.SetBool("podeAndar", false);
         }
     }
 }
