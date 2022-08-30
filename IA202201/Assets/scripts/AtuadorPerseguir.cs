@@ -5,7 +5,6 @@ using UnityEngine;
 public class AtuadorPerseguir : MonoBehaviour
 {
     public GameObject alvo;
-    public float velocidade;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +16,7 @@ public class AtuadorPerseguir : MonoBehaviour
     {
 
     }
-    public void Perseguir()
+    public void Perseguir(float velocidade)
     {
         Vector3 direcao = (alvo.transform.position - transform.position).normalized;
         Quaternion giro = Quaternion.LookRotation(direcao);

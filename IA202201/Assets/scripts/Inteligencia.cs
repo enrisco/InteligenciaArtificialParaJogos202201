@@ -8,9 +8,12 @@ public class Inteligencia : MonoBehaviour
     [SerializeField] SensorVisao visao;
     [Header("Atuadores")]
     [SerializeField] AtuadorPerseguir seguir;
+    [SerializeField] AtuadorPatrulha patrulhando;
     // Start is called before the first frame update
-    [Header("Geral")]
+    [Header("Configuração")]
     Animator anim;
+    [SerializeField] float velocidade;
+    public AtuadorPatrulha.tipoDePatrulha tipoDePatrulha;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -19,14 +22,15 @@ public class Inteligencia : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("podeAndar", true);
         if (visao.vendo)
         {
-            anim.SetBool("podeAndar", true);
-            seguir.Perseguir();
+            
+            seguir.Perseguir(velocidade);
         }
         else
         {
-            anim.SetBool("podeAndar", false);
+            patrulhando.Patrulhar(tipoDePatrulha, velocidade);
         }
     }
 }

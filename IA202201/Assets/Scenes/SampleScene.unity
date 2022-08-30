@@ -232,8 +232,23 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 32
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &228916462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228916459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3006ed4352ad52d419ddb2dbe9fe6197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distancia: 20
+  tempoLimite: 3
+  limiteAngulo: 360
 --- !u!114 &228916463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +279,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visao: {fileID: 228916463}
   seguir: {fileID: 228916466}
+  patrulhando: {fileID: 228916462}
+  velocidade: 5
+  tipoDePatrulha: 0
 --- !u!95 &228916465
 Animator:
   serializedVersion: 3
@@ -296,7 +314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 802135508}
-  velocidade: 5
 --- !u!1 &517259463
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d70c9c206f281b40af78a5ce3f9c8d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 143.22371
+      value: 123.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6d70c9c206f281b40af78a5ce3f9c8d0, type: 3}
       propertyPath: m_LocalRotation.w
