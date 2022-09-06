@@ -9,7 +9,6 @@ public class Inteligencia : MonoBehaviour
     [Header("Atuadores")]
     [SerializeField] AtuadorPerseguir seguir;
     [SerializeField] AtuadorPatrulha patrulhando;
-    // Start is called before the first frame update
     [Header("Configuração")]
     Animator anim;
     [SerializeField] float velocidade;
@@ -19,7 +18,6 @@ public class Inteligencia : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         anim.SetBool("podeAndar", true);
